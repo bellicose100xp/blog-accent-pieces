@@ -1,8 +1,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-html, body {
-    overflow-x: hidden;
-}
+    html,
+    body {
+        overflow-x: hidden;
+    }
 </style>
 
 <!--Title-->
@@ -87,11 +88,13 @@ html, body {
             }
             .hs-title-item {
                 padding: 5px 5px;
-                font-size: 30px;
+                font-size: 3.2vmax;
             }
 
             .hs-description-item {
                 padding-top: 10px;
+                font-size: 2.5vmax;
+                text-align: justify;
             }
             .hs-subtitle-item {
                 font-size: 50px;
@@ -231,21 +234,21 @@ html, body {
 
             .hs-ap-b1-title {
                 padding-top: 2vw;
-                font-size: 5vw;
+                font-size: 4vmax;
                 font-weight: bold;
             }
 
             .hs-ap-b1-sub-title {
-                font-size: 4vW;
+                font-size: 3vmax;
                 font-weight: light;
             }
 
             .hs-ap-b1-description {
                 padding-top: 1vw;
                 padding-right: 1vw;
-                font-size: 3vw;
+                font-size: 2.2vmax;
                 font-weight: lighter;
-                line-height: 3.5vw;
+                line-height: unset;
                 text-align: justify;
             }
         }
@@ -303,23 +306,38 @@ html, body {
         .b2-title {
             width: 100%;
             padding-top: 2%;
-            padding-left: 10%;
             padding-bottom: 2%;
             font-size: 4vw;
+            display: flex;
+            /*background-color: rgba(255, 0, 0, 0.5)*/
+        }
+
+        .b2-title-margin {
+            /*background-color: rgba(0, 255, 255, 0.5);*/
+            width: 19%;
+            text-align: right;
+            font-weight: bolder;
+        }
+
+        .b2-title-text {
+            /*background-color: rgba(255, 255, 0, 0.5);*/
             font-weight: lighter;
         }
 
         .b2-description {
+            /*background-color: rgba(0, 0, 255, 0.5);*/
             width: 100%;
             /*background-color: orchid;*/
             display: flex;
         }
 
         .b2-description-margin {
-            width: 19%;
+            /*background-color: rgba(160, 160, 160, 0.5);*/
+            width: 18%;
         }
 
         .b2-description-text {
+            /*background-color: rgba(255, 0, 0, 0.5);*/
             width: 40%;
             font-size: 1.5vw;
             padding-left: 3%;
@@ -381,7 +399,7 @@ html, body {
 
         @media all and (max-width: 768px) {
             .b2-heading-long-description {
-                font-size: 3vw;
+                font-size: 2.2vmax;
                 padding: 0;
                 padding-bottom: 2vw;
             }
@@ -396,31 +414,34 @@ html, body {
                 left: unset;
                 height: unset;
                 width: 100%;
+                padding-left: 5%;
             }
 
             .b2-title {
                 width: 100%;
                 padding-top: 5%;
-                padding-left: 20%;
                 padding-bottom: 3%;
-                font-size: 6vw;
+                font-size: 4vmax;
                 font-weight: bold;
+            }
+
+            .b2-title-margin {
+                width: 14%
             }
 
             .b2-description {
                 width: 100%;
                 padding-bottom: 5%;
                 /*background-color: orchid;*/
-                display: flex;
             }
 
             .b2-description-margin {
-                width: 28%;
+                width: 13%;
             }
 
             .b2-description-text {
-                width: 40%;
-                font-size: 3vw;
+                width: 60%;
+                font-size: 2vmax;
                 padding-left: 3%;
                 text-align: justify;
                 line-height: unset;
@@ -475,7 +496,10 @@ html, body {
     <div id="b2-container" class="b2-container">
         <div class="b2-text-container">
             <div class="b2-item">
-                <div class="b2-title"><strong>01:</strong> BASE COLOR</div>
+                <div class="b2-title">
+                    <div class="b2-title-margin">01:</div>
+                    <div class="b2-title-text">&nbsp;BASE COLOR</div>
+                </div>
                 <div class="b2-description">
                     <div class="b2-description-margin"></div>
                     <div class="b2-description-text"> The base is the foundation and starting point of your outfit. Everything else is built upon this piece,
@@ -484,7 +508,10 @@ html, body {
                 </div>
             </div>
             <div class="b2-item">
-                <div class="b2-title"><strong>02:</strong> TONAL COLOR</div>
+                <div class="b2-title">
+                    <div class="b2-title-margin">02:</div>
+                    <div class="b2-title-text">&nbsp;TONAL COLOR</div>
+                </div>
                 <div class="b2-description">
                     <div class="b2-description-margin"></div>
                     <div class="b2-description-text"> The base is the foundation and starting point of your outfit. Everything else is built upon this piece,
@@ -493,7 +520,10 @@ html, body {
                 </div>
             </div>
             <div class="b2-item">
-                <div class="b2-title"><strong>03:</strong> POP COLOR</div>
+                <div class="b2-title">
+                    <div class="b2-title-margin">03:</div>
+                    <div class="b2-title-text">&nbsp;POP COLOR</div>
+                </div>
                 <div class="b2-description">
                     <div class="b2-description-margin"></div>
                     <div class="b2-description-text"> The base is the foundation and starting point of your outfit. Everything else is built upon this piece,
@@ -526,26 +556,26 @@ html, body {
 
     <script>
         (() => {
-            // desktop
-            let paths = {
-                "base": {
-                    "line1": [0.45, 0.06],
-                    "line2": [0.55, 0.06],
-                    "line3": [0.55, 0.32],
-                    "line4": [0.62, 0.32]
-                },
-                "tonal": {
-                    "line1": [0.48, 0.40],
-                    "line2": [0.735, 0.40]
-                },
-                "pop": {
-                    "line1": [0.43, 0.73],
-                    "line2": [0.75, 0.73],
-                    "line3": [0.75, 0.35]
-                }
-            }
+            // Desktop View
 
             let calcLineDesktop = () => {
+                let paths = {
+                    "base": {
+                        "line1": [0.45, 0.06],
+                        "line2": [0.55, 0.06],
+                        "line3": [0.55, 0.32],
+                        "line4": [0.62, 0.32]
+                    },
+                    "tonal": {
+                        "line1": [0.48, 0.40],
+                        "line2": [0.735, 0.40]
+                    },
+                    "pop": {
+                        "line1": [0.43, 0.73],
+                        "line2": [0.75, 0.73],
+                        "line3": [0.75, 0.35]
+                    }
+                }
                 let desktopContainer = document.querySelector("#b2-container")
                 let { offsetWidth: w, offsetHeight: h } = desktopContainer;
                 let elements = {};
@@ -566,27 +596,43 @@ html, body {
             calcLineDesktop();
             window.addEventListener('resize', calcLineDesktop)
 
-            // Mobile
-
-            let circles = {
-                "1": {
-                    "cx": 0.35,
-                    "cy": 0.43,
-                    "r": 0.03
-                },
-                "2": {
-                    "cx": 0.50,
-                    "cy": 0.63,
-                    "r": 0.03
-                },
-                "3": {
-                    "cx": 0.58,
-                    "cy": 0.45,
-                    "r": 0.03
-                }
-            }
+            // Mobile View
 
             let calcDotMobile = () => {
+                let circles = {
+                    "1": {
+                        "cx": 0.10,
+                        "cy": 0.45,
+                        "r": 0.03
+                    },
+                    "2": {
+                        "cx": 0.10,
+                        "cy": 0.55,
+                        "r": 0.03
+                    },
+                    "3": {
+                        "cx": 0.10,
+                        "cy": 0.65,
+                        "r": 0.03
+                    }
+                }
+
+                let paths = {
+                    "1": {
+                        "line1": [0.14, 0.32],
+                        "line2": [0.35, 0.32]
+                    },
+                    "2": {
+                        "line1": [0.14, 0.39],
+                        "line2": [0.50, 0.39],
+                        "line3": [0.50, 0.37]
+                    },
+                    "3": {
+                        "line1": [0.14, 0.46],
+                        "line2": [0.57, 0.46]
+                    }
+                }
+
                 let imageContainer = document.querySelector('#b2-image-container');
                 let { offsetWidth: w, offsetHeight: h } = imageContainer;
                 let svg = document.querySelector('#b2-svg-dot');
@@ -596,6 +642,7 @@ html, body {
                     svg.removeChild(svg.firstChild);
                 }
 
+                // add circles and text
                 for (let circle in circles) {
                     if (circles.hasOwnProperty(circle)) {
 
@@ -615,6 +662,24 @@ html, body {
                         textElem.setAttribute("y", `${w * (circleAttrs.cy + 0.013)}`);
                         textElem.innerHTML = `${circle}`;
                         svg.appendChild(textElem);
+                    }
+                }
+
+                // add path to circle
+                for (let path in paths) {
+                    if (paths.hasOwnProperty(path)) {
+                        let pathElem = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                        let lines = paths[path];
+                        let dPathAttrib = '';
+                        for (let line in lines) {
+                            if (lines.hasOwnProperty(line)) {
+                                dPathAttrib = line === "line1" ? `M${w * lines[line][0]},${h * lines[line][1]}` : `${dPathAttrib}, L${w * lines[line][0]},${h * lines[line][1]}`;
+                            }
+                        }
+                        pathElem.setAttribute('d', dPathAttrib);
+                        pathElem.classList.add('b2-line-path');
+                        svg.appendChild(pathElem);
+                        // console.log(pathElem);
                     }
                 }
 
@@ -702,28 +767,29 @@ html, body {
 
             .b3-title {
                 padding-top: 0.01vw;
-                font-size: 5vw;
+                font-size: 4vmax;
                 font-weight: bold;
                 text-align: center;
             }
 
             .b3-sub-title {
-                font-size: 4vW;
+                font-size: 3vmax;
                 font-weight: light;
             }
 
             .b3-description {
                 padding-top: 1vw;
                 padding-right: 1vw;
-                font-size: 3vw;
+                font-size: 2.5vmax;
                 font-weight: lighter;
-                line-height: 3.5vw;
+                line-height: unset;
                 text-align: justify;
             }
 
             .b3-heading-long-description {
                 padding: 2vw 0;
-                font-size: 3vw;
+                font-size: 2.5vmax;
+                text-align: justify;
             }
         }
     </style>
