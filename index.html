@@ -79,14 +79,14 @@
             }
             .hs-title-item {
                 padding: 5px 5px;
-                font-size: 22px;
+                font-size: 30px;
             }
 
             .hs-description-item {
                 padding-top: 10px;
             }
             .hs-subtitle-item {
-                font-size: 30px;
+                font-size: 50px;
             }
             .hs-line {
                 display: none;
@@ -107,12 +107,14 @@
             }
         }
 
-        @media all and (max-width: 415px) {
+        @media all and (max-width: 520px) {
             .hs-subtitle {
+                width: 100%;
                 order: 1;
                 padding: 7px;
             }
             .hs-title {
+                font-size: 20px;
                 flex-flow: row nowrap;
             }
             .hs-description-item {
@@ -126,6 +128,9 @@
             }
             .hs-line-tablet {
                 display: none;
+            }
+            .hs-subtitle-item {
+                font-size: 30px;
             }
         }
     </style>
@@ -355,10 +360,14 @@
 
         .b2-line-path {
             stroke: black;
-            stroke-width: 0.3vw;
+            stroke-width: 1px;
             fill: none;
             /*marker-start: url(#markerCircle);
             marker-end: url(#markerArrow);*/
+        }
+
+        .b2-svg-dot {
+            display: none;
         }
 
         @media all and (max-width: 768px) {
@@ -414,7 +423,38 @@
             .b2-image-container {
                 position: unset;
                 right: unset;
+                position: relative;
                 width: 100%;
+                padding-bottom: 141.6666667%;
+            }
+
+            .b2-image-container img {
+                position: absolute;
+                width: 100%;
+                left: 0%;
+            }
+
+            .b2-svg-line {
+                display: none;
+            }
+            .b2-svg-dot {
+                display: unset;
+                position: absolute;
+                left: 0%;
+                height: 100%;
+                width: 100%;
+                /*background-color: rgba(255,0,0,0.5)*/
+            }
+
+            .b2-svg-dot circle {
+                fill: darkslategray;
+                stroke: none;
+            }
+
+            .b2-svg-dot text {
+                fill: white;
+                font-family: sans-serif;
+                font-size: 4vw;
             }
         }
     </style>
@@ -453,8 +493,11 @@
                 </div>
             </div>
         </div>
-        <div class="b2-image-container">
+        <div id="b2-image-container" class="b2-image-container">
             <img src="assets/blog_ap-michael-suit.jpg" />
+            <svg id="b2-svg-dot" class="b2-svg-dot">
+
+            </svg>
         </div>
         <svg id="b2-svg-line" class="b2-svg-line">
             <defs>
@@ -468,40 +511,108 @@
 
             <path id="base" class="b2-line-path" />
             <path id="tonal" class="b2-line-path" />
-            <path id="path" class="b2-line-path" />
+            <path id="pop" class="b2-line-path" />
         </svg>
     </div>
 
     <script>
         (() => {
-
+            // desktop
             let paths = {
                 "base": {
                     "line1": [0.45, 0.06],
                     "line2": [0.55, 0.06],
-                    "line3": [0.55, 0.4],
-                    "line4": [0.60, 0.4]
+                    "line3": [0.55, 0.32],
+                    "line4": [0.62, 0.32]
+                },
+                "tonal": {
+                    "line1": [0.48, 0.40],
+                    "line2": [0.735, 0.40]
+                },
+                "pop": {
+                    "line1": [0.43, 0.73],
+                    "line2": [0.75, 0.73],
+                    "line3": [0.75, 0.35]
                 }
             }
 
-            let desktopContainer = document.querySelector("#b2-container")
-            let { offsetWidth: w, offsetHeight: h } = desktopContainer;
-
-            let elements = {};
-
-            for (let path in paths) {
-                if (paths.hasOwnProperty(path)) {
-                    elements[path] = document.querySelector(`#${path}`);               
-                    let lines = paths[path];
-                    let dPathAttrib = '';
-                    for (let line in lines) {
-                        if (lines.hasOwnProperty(line)) {
-                            dPathAttrib = line === "line1" ? `M${w * lines[line][0]},${h * lines[line][1]}` : `${dPathAttrib}, L${w * lines[line][0]},${h * lines[line][1]}`;
+            let calcLineDesktop = () => {
+                let desktopContainer = document.querySelector("#b2-container")
+                let { offsetWidth: w, offsetHeight: h } = desktopContainer;
+                let elements = {};
+                for (let path in paths) {
+                    if (paths.hasOwnProperty(path)) {
+                        elements[path] = document.querySelector(`#${path}`);
+                        let lines = paths[path];
+                        let dPathAttrib = '';
+                        for (let line in lines) {
+                            if (lines.hasOwnProperty(line)) {
+                                dPathAttrib = line === "line1" ? `M${w * lines[line][0]},${h * lines[line][1]}` : `${dPathAttrib}, L${w * lines[line][0]},${h * lines[line][1]}`;
+                            }
                         }
+                        elements[path].setAttribute('d', dPathAttrib);
                     }
-                    elements[path].setAttribute('d', dPathAttrib);
                 }
             }
+            calcLineDesktop();
+            window.addEventListener('resize', calcLineDesktop)
+
+            // Mobile
+
+            let circles = {
+                "1": {
+                    "cx": 0.35,
+                    "cy": 0.43,
+                    "r": 0.03
+                },
+                "2": {
+                    "cx": 0.50,
+                    "cy": 0.63,
+                    "r": 0.03
+                },
+                "3": {
+                    "cx": 0.58,
+                    "cy": 0.45,
+                    "r": 0.03
+                }
+            }
+
+            let calcDotMobile = () => {
+                let imageContainer = document.querySelector('#b2-image-container');
+                let { offsetWidth: w, offsetHeight: h } = imageContainer;
+                let svg = document.querySelector('#b2-svg-dot');
+
+                //remove any existing svg elements
+                while (svg.firstChild) {
+                    svg.removeChild(svg.firstChild);
+                }
+
+                for (let circle in circles) {
+                    if (circles.hasOwnProperty(circle)) {
+                        
+                        //add circle
+                        let circleAttrs = circles[circle];
+                        let circleElem = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                        for (let circleAttr in circleAttrs) {
+                            if (circleAttrs.hasOwnProperty(circleAttr)) {
+                                circleElem.setAttribute(`${circleAttr}`, `${w * circleAttrs[circleAttr]}`);
+                            }
+                        }
+                        svg.appendChild(circleElem);
+
+                        // add text to circle
+                        let textElem = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                        textElem.setAttribute("x", `${w * (circleAttrs.cx - 0.011)}`);
+                        textElem.setAttribute("y", `${w * (circleAttrs.cy + 0.013)}`);
+                        textElem.innerHTML = `${circle}`;
+                        svg.appendChild(textElem);
+                    }
+                }
+
+            }
+
+            calcDotMobile();
+            window.addEventListener('resize', calcDotMobile);
         })();
     </script>
 
