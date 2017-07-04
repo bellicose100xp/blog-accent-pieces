@@ -1,0 +1,629 @@
+<!--Title-->
+<div>
+    <style>
+        .hs-container {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            font-family: Sans-Serif;
+        }
+
+        .hs-title {
+            /*background-color: red;*/
+            border-right: 2px solid black;
+            box-sizing: border-box;
+            /*height: 80px;*/
+            width: 200px;
+            order: 2;
+            flex: 1 auto;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hs-description {
+            /*height: 80px;*/
+            width: 400px;
+            order: 3;
+            flex: 3 auto;
+        }
+
+        .hs-subtitle {
+            background-color: black;
+            /*height: 80px;*/
+            width: 200px;
+            order: 4;
+            flex: 1 auto;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+        }
+
+        .hs-title-item {
+            font-size: 30px;
+        }
+
+        .hs-description-item {
+            padding: 5px 10px;
+            font-weight: lighter;
+        }
+
+        .hs-subtitle-item {
+            color: white;
+            font-size: 60px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .hs-line {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-width: 4px;
+        }
+
+        .hs-line-tablet {
+            display: none;
+        }
+
+        @media all and (max-width: 815px) {
+            .hs-description {
+                order: 6;
+            }
+
+            .hs-title {
+                border-right: 0px;
+                flex-flow: row nowrap;
+            }
+            .hs-title-item {
+                padding: 5px 5px;
+                font-size: 22px;
+            }
+
+            .hs-description-item {
+                padding-top: 10px;
+            }
+            .hs-subtitle-item {
+                font-size: 30px;
+            }
+            .hs-line {
+                display: none;
+            }
+            .hs-line {
+                display: none;
+                border-style: none;
+                border-width: 0px;
+            }
+            .hs-line-tablet {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-style: solid;
+                border-width: 2px;
+                width: 100%;
+                order: 5;
+            }
+        }
+
+        @media all and (max-width: 415px) {
+            .hs-subtitle {
+                order: 1;
+                padding: 7px;
+            }
+            .hs-title {
+                flex-flow: row nowrap;
+            }
+            .hs-description-item {
+                padding-top: 5px;
+                text-align: justify;
+            }
+            .hs-line {
+                display: block;
+                border-style: solid;
+                border-width: 1px;
+            }
+            .hs-line-tablet {
+                display: none;
+            }
+        }
+    </style>
+
+    <div class="hs-container">
+        <div class="hs-title">
+            <div class="hs-title-item">ACCENT</div>
+            <div class="hs-title-item">PIECES</div>
+        </div>
+        <div class="hs-line-tablet"></div>
+        <div class="hs-description">
+            <div class="hs-description-item">
+                A great outfit is the result of grand design. When you plan with Base, Tonal, & Pop of Color in mind, your ensemble will
+                always leave a mark.
+            </div>
+        </div>
+        <div class="hs-subtitle">
+            <div class="hs-subtitle-item">STYLE</div>
+        </div>
+    </div>
+    <div class="hs-line"> </div>
+</div>
+
+<!--accent pieces b1-->
+<div>
+    <style>
+        .hs-ap-b1-container {
+            display: flex;
+            flex-flow: row wrap;
+            padding: 10px 0px;
+            font-family: Sans-Serif;
+        }
+
+        .hs-ap-b1-item1 {
+            width: 60%;
+        }
+
+        .hs-ap-b1-item2 {
+            width: 40%;
+        }
+
+        .hs-ap-b1-image {
+            width: 95%;
+        }
+
+        .hs-ap-b1-title {
+            padding-top: 2vw;
+            font-size: 4vw;
+            font-weight: bold;
+        }
+
+        .hs-ap-b1-sub-title {
+            font-size: 2vW;
+            font-weight: light;
+        }
+
+        .hs-ap-b1-description {
+            padding-top: 1vw;
+            padding-right: 1vw;
+            font-size: 1.5vw;
+            font-weight: lighter;
+            line-height: 2.2vw;
+            text-align: justify;
+        }
+
+        .hs-ap-b1-line {
+            display: block;
+            width: 100%;
+            margin-top: 1.5vw;
+            margin-bottom: 1.5vw;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-width: 1.5px;
+        }
+
+        @media all and (max-width: 768px) {
+            .hs-ap-b1-item1 {
+                width: 100%;
+            }
+
+            .hs-ap-b1-item2 {
+                width: 100%;
+            }
+
+            .hs-ap-b1-image {
+                width: 100%;
+            }
+
+            .hs-ap-b1-title {
+                padding-top: 2vw;
+                font-size: 5vw;
+                font-weight: bold;
+            }
+
+            .hs-ap-b1-sub-title {
+                font-size: 4vW;
+                font-weight: light;
+            }
+
+            .hs-ap-b1-description {
+                padding-top: 1vw;
+                padding-right: 1vw;
+                font-size: 3vw;
+                font-weight: lighter;
+                line-height: 3.5vw;
+                text-align: justify;
+            }
+        }
+    </style>
+    <div class="hs-ap-b1-container">
+        <div class="hs-ap-b1-item1">
+            <img class="hs-ap-b1-image" src="assets/accent-piece-header-image.jpg" />
+        </div>
+        <div class="hs-ap-b1-item2">
+            <div class="hs-ap-b1-title">THE SEXIEST ACCENT,</div>
+            <div class="hs-ap-b1-sub-title"> IS AN ACCENT PIECE </div>
+            <div class="hs-ap-b1-description">Trying to piece together a last-minute outfit never works, take time to think out your outfits in advance. You
+                will always be well coordinated, looking more harmonious and elegant. Follow this guide on choosing the proper
+                accent pieces. There are several color schemes, so there is something for everyone and every setting. The
+                following color schemes are recommending for choosing the colors for an outfit.
+            </div>
+        </div>
+        <div class="hs-ap-b1-line"></div>
+    </div>
+</div>
+
+<!--accent pieces b2-->
+<div>
+    <style>
+         :root {
+            --text-color: black;
+        }
+
+        .b2-container {
+            /*background-color: yellow;*/
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.66666667%;
+            font-family: sans-serif;
+        }
+
+        .b2-text-container {
+            position: absolute;
+            width: 60%;
+            height: 100%;
+            left: 5%;
+            /*background-color: orange;*/
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        .b2-item {
+            width: 100%;
+            flex: 1 0 auto;
+            /*background-color: red;*/
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        .b2-title {
+            width: 100%;
+            padding-top: 2%;
+            padding-left: 10%;
+            padding-bottom: 2%;
+            font-size: 4vw;
+            font-weight: lighter;
+        }
+
+        .b2-description {
+            width: 100%;
+            /*background-color: orchid;*/
+            display: flex;
+        }
+
+        .b2-description-margin {
+            width: 19%;
+        }
+
+        .b2-description-text {
+            width: 40%;
+            font-size: 1.5vw;
+            padding-left: 3%;
+            text-align: justify;
+            line-height: 1.8vw;
+            font-weight: lighter;
+            border-left: 1px solid black;
+            /*background-color: red;*/
+        }
+
+        .b2-image-container {
+            position: absolute;
+            width: 40%;
+            right: 8%;
+            z-index: -2;
+        }
+
+        .b2-image-container img {
+            width: 100%
+        }
+
+        .b2-heading-long-description {
+            font-family: sans-serif;
+            font-size: 1.5vw;
+            text-align: justify;
+            font-weight: lighter;
+            padding: 0 1vw;
+            padding-bottom: 2vw;
+        }
+
+        .b2-svg-line {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            z-index: -1;
+            /*background-color: rgba(255, 0, 0, 0.5);*/
+        }
+
+        #b2-marker-arrow {
+            fill: black;
+        }
+
+        #b2-marker-circle {
+            fill: black;
+        }
+
+        .b2-line-path {
+            stroke: black;
+            stroke-width: 0.3vw;
+            fill: none;
+            /*marker-start: url(#markerCircle);
+            marker-end: url(#markerArrow);*/
+        }
+
+        @media all and (max-width: 768px) {
+            .b2-heading-long-description {
+                font-size: 3vw;
+                padding: 0;
+                padding-bottom: 2vw;
+            }
+
+            .b2-container {
+                position: unset;
+                padding-bottom: unset;
+            }
+
+            .b2-text-container {
+                position: unset;
+                left: unset;
+                height: unset;
+                width: 100%;
+            }
+
+            .b2-title {
+                width: 100%;
+                padding-top: 5%;
+                padding-left: 20%;
+                padding-bottom: 3%;
+                font-size: 6vw;
+                font-weight: bold;
+            }
+
+            .b2-description {
+                width: 100%;
+                padding-bottom: 5%;
+                /*background-color: orchid;*/
+                display: flex;
+            }
+
+            .b2-description-margin {
+                width: 28%;
+            }
+
+            .b2-description-text {
+                width: 40%;
+                font-size: 3vw;
+                padding-left: 3%;
+                text-align: justify;
+                line-height: unset;
+                font-weight: lighter;
+                border-left: 1px solid black;
+                /*background-color: red;*/
+            }
+
+            .b2-image-container {
+                position: unset;
+                right: unset;
+                width: 100%;
+            }
+        }
+    </style>
+    <div class="b2-heading-long-description">When you are putting together an outfit, it is recommended that you do not wear more than three colors. Your outfit is
+        going to be defined by the smaller colored accent pieces unless you’ve chosen a bold-colored suit. A gray suit can
+        transform when you start changing the shirt or tie. A great way to go about choosing merchandise colors is to follow
+        the order base color, tonal color, then pop color.
+    </div>
+    <div id="b2-container" class="b2-container">
+        <div class="b2-text-container">
+            <div class="b2-item">
+                <div class="b2-title"><strong>01:</strong> BASE COLOR</div>
+                <div class="b2-description">
+                    <div class="b2-description-margin"></div>
+                    <div class="b2-description-text"> The base is the foundation and starting point of your outfit. Everything else is built upon this piece,
+                        which typically include pants or suits, but is not limited to these options.
+                    </div>
+                </div>
+            </div>
+            <div class="b2-item">
+                <div class="b2-title"><strong>02:</strong> TONAL COLOR</div>
+                <div class="b2-description">
+                    <div class="b2-description-margin"></div>
+                    <div class="b2-description-text"> The base is the foundation and starting point of your outfit. Everything else is built upon this piece,
+                        which typically include pants or suits, but is not limited to these options.
+                    </div>
+                </div>
+            </div>
+            <div class="b2-item">
+                <div class="b2-title"><strong>03:</strong> POP COLOR</div>
+                <div class="b2-description">
+                    <div class="b2-description-margin"></div>
+                    <div class="b2-description-text"> The base is the foundation and starting point of your outfit. Everything else is built upon this piece,
+                        which typically include pants or suits, but is not limited to these options.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="b2-image-container">
+            <img src="assets/blog_ap-michael-suit.jpg" />
+        </div>
+        <svg id="b2-svg-line" class="b2-svg-line">
+            <defs>
+                <marker id="b2-marker-circle" markerWidth="4" markerHeight="4" refX="2" refY="2">
+                    <circle cx="2" cy="2" r="2" />
+                </marker>
+                <marker id="b2-marker-arrow" markerWidth="6" markerHeight="6" refX="0" refY="3" orient="auto">
+                    <polygon points="0 0, 6 3, 0 6" />
+                </marker>
+            </defs>
+
+            <path id="base" class="b2-line-path" />
+            <path id="tonal" class="b2-line-path" />
+            <path id="path" class="b2-line-path" />
+        </svg>
+    </div>
+
+    <script>
+        (() => {
+
+            let paths = {
+                "base": {
+                    "line1": [0.45, 0.06],
+                    "line2": [0.55, 0.06],
+                    "line3": [0.55, 0.4],
+                    "line4": [0.60, 0.4]
+                }
+            }
+
+            let desktopContainer = document.querySelector("#b2-container")
+            let { offsetWidth: w, offsetHeight: h } = desktopContainer;
+
+            let elements = {};
+
+            for (let path in paths) {
+                if (paths.hasOwnProperty(path)) {
+                    elements[path] = document.querySelector(`#${path}`);               
+                    let lines = paths[path];
+                    let dPathAttrib = '';
+                    for (let line in lines) {
+                        if (lines.hasOwnProperty(line)) {
+                            dPathAttrib = line === "line1" ? `M${w * lines[line][0]},${h * lines[line][1]}` : `${dPathAttrib}, L${w * lines[line][0]},${h * lines[line][1]}`;
+                        }
+                    }
+                    elements[path].setAttribute('d', dPathAttrib);
+                }
+            }
+        })();
+    </script>
+
+</div>
+
+<!--accent pieces b3-->
+<div>
+    <style>
+        .b3-container {
+            display: flex;
+            flex-flow: row wrap;
+            padding: 10px 0px;
+            font-family: Sans-Serif;
+        }
+
+        .b3-item1 {
+            width: 50%;
+        }
+
+        .b3-item2 {
+            padding-top: 5%;
+            width: 50%;
+        }
+
+        .b3-image {
+            width: 95%;
+        }
+
+        .b3-title {
+            padding-top: 2vw;
+            font-size: 3vw;
+            font-weight: bold;
+        }
+
+        .b3-sub-title {
+            font-size: 2vW;
+            font-weight: light;
+        }
+
+        .b3-description {
+            padding-top: 1vw;
+            padding-right: 1vw;
+            font-size: 1.5vw;
+            font-weight: lighter;
+            line-height: 2.2vw;
+            text-align: justify;
+        }
+
+        .b3-line {
+            display: block;
+            width: 100%;
+            margin-top: 1.5vw;
+            margin-bottom: 1.5vw;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-width: 1.5px;
+        }
+
+        .b3-heading-long-description {
+            font-family: sans-serif;
+            font-weight: lighter;
+            padding-top: 0 1.2vw;
+        }
+
+        @media all and (max-width: 768px) {
+            .b3-item1 {
+                width: 100%;
+            }
+
+            .b3-item2 {
+                width: 100%;
+            }
+
+            .b3-image {
+                width: 100%;
+            }
+
+            .b3-title {
+                padding-top: 0.01vw;
+                font-size: 5vw;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .b3-sub-title {
+                font-size: 4vW;
+                font-weight: light;
+            }
+
+            .b3-description {
+                padding-top: 1vw;
+                padding-right: 1vw;
+                font-size: 3vw;
+                font-weight: lighter;
+                line-height: 3.5vw;
+                text-align: justify;
+            }
+
+            .b3-heading-long-description {
+                padding: 2vw 0;
+                font-size: 3vw;
+            }
+        }
+    </style>
+    <div class="b3-container">
+        <div class="b3-item1">
+            <img class="b3-image" src="assets/accent-piece--shop-accessories.jpg" />
+        </div>
+        <div class="b3-item2">
+            <div class="b3-title">ACCESSORIZE, RIGHT.</div>
+            <div class="b3-description">If you can’t find any pop colors to add, we advise you look at the bland pile of shoes in your closet or that
+                ‘bad hair day’ hat to realize, it is time to add some life into your accessory collection. Use our <strong>Accessory
+                Essentials</strong> as a guide. The color for your outfit can come from your tie, scarf, cufflink, or any
+                other great accessories. Remember to match your accessories to your clothing, not the opposite.
+            </div>
+        </div>
+    </div>
+    <div class="b3-heading-long-description">When you are putting together an outfit, it is recommended that you do not wear more than three colors. Your outfit is
+        going to be defined by the smaller colored accent pieces unless you’ve chosen a bold-colored suit. A gray suit can
+        transform when you start changing the shirt or tie. A great way to go about choosing merchandise colors is to follow
+        the order base color, tonal color, then pop color.
+    </div>
+    <div class="b3-line"></div>
+</div>
