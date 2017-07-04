@@ -1,7 +1,15 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html, body {
+    overflow-x: hidden;
+}
+</style>
+
 <!--Title-->
 <div>
     <style>
         .hs-container {
+            width: 100%;
             display: flex;
             flex-flow: row wrap;
             justify-content: space-around;
@@ -158,6 +166,7 @@
 <div>
     <style>
         .hs-ap-b1-container {
+            width: 100%;
             display: flex;
             flex-flow: row wrap;
             padding: 10px 0px;
@@ -589,7 +598,7 @@
 
                 for (let circle in circles) {
                     if (circles.hasOwnProperty(circle)) {
-                        
+
                         //add circle
                         let circleAttrs = circles[circle];
                         let circleElem = document.createElementNS("http://www.w3.org/2000/svg", "circle");
