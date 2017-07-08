@@ -588,12 +588,12 @@
                 let elements = {};
                 for (let path in paths) {
                     if (paths.hasOwnProperty(path)) {
-                        elements[path] = document.querySelector(`#${path}`);
+                        elements[path] = document.querySelector('#' + path);
                         let lines = paths[path];
                         let dPathAttrib = '';
                         for (let line in lines) {
                             if (lines.hasOwnProperty(line)) {
-                                dPathAttrib = line === "line1" ? `M${w * lines[line][0]},${h * lines[line][1]}` : `${dPathAttrib}, L${w * lines[line][0]},${h * lines[line][1]}`;
+                                dPathAttrib = line === "line1" ? 'M' + w * lines[line][0] + ',' + h * lines[line][1] : dPathAttrib + ', L' + w * lines[line][0] + ',' + h * lines[line][1];
                             }
                         }
                         elements[path].setAttribute('d', dPathAttrib);
@@ -658,16 +658,16 @@
                         let circleElem = document.createElementNS("http://www.w3.org/2000/svg", "circle");
                         for (let circleAttr in circleAttrs) {
                             if (circleAttrs.hasOwnProperty(circleAttr)) {
-                                circleElem.setAttribute(`${circleAttr}`, `${w * circleAttrs[circleAttr]}`);
+                                circleElem.setAttribute(circleAttr, w * circleAttrs[circleAttr]);
                             }
                         }
                         svg.appendChild(circleElem);
 
                         // add text to circle
                         let textElem = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                        textElem.setAttribute("x", `${w * (circleAttrs.cx - 0.011)}`);
-                        textElem.setAttribute("y", `${w * (circleAttrs.cy + 0.013)}`);
-                        textElem.innerHTML = `${circle}`;
+                        textElem.setAttribute("x", w * (circleAttrs.cx - 0.011));
+                        textElem.setAttribute("y", w * (circleAttrs.cy + 0.013));
+                        textElem.innerHTML = circle;
                         svg.appendChild(textElem);
                     }
                 }
@@ -680,7 +680,7 @@
                         let dPathAttrib = '';
                         for (let line in lines) {
                             if (lines.hasOwnProperty(line)) {
-                                dPathAttrib = line === "line1" ? `M${w * lines[line][0]},${h * lines[line][1]}` : `${dPathAttrib}, L${w * lines[line][0]},${h * lines[line][1]}`;
+                                dPathAttrib = line === "line1" ? 'M' + w * lines[line][0] + ',' + h * lines[line][1] : dPathAttrib + ', L' + w * lines[line][0] + ',' + h * lines[line][1];
                             }
                         }
                         pathElem.setAttribute('d', dPathAttrib);
